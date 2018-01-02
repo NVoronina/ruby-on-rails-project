@@ -1,15 +1,26 @@
-p#notice = notice
+div.info
+  p#notice = notice
 
-p
-  strong Title:
-  = @post.title
-p
-  strong Content:
-  = @post.content
-p
-  strong User:
-  = @post.user_id
+  h1 #{@post.title}
+  div.images-mini
+    -if @photos[0]
+      - @photos.each do |photo|
+        = link_to image_tag(photo.image.thumb('100x100').url), photo.image.url
+  p
+    strong Описание:
+    = @post.content
+  p
+    strong Контактное имя:
+    = @post.user.name
+  p
+    strong Адрес:
+    = @post.address
+  p
+    strong Контакты:
+    = @post.user.email
+    = @post.user.tel
+  p
+    strong Цена:
+    = @post.price
 
-=> link_to 'Edit', edit_post_path(@post)
-'|
-=< link_to 'Back', posts_path
+  =< link_to 'Назад', posts_path

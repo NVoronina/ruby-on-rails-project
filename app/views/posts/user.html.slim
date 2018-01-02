@@ -1,0 +1,24 @@
+h1 Список ваших объявлений
+
+ul.list-posts
+  - if @posts[0]
+    - @posts.each do |post|
+      li
+        div.title
+          h3 = post.title
+        div.content = post.content
+        div.images-mini
+        - if post.photo[0]
+          - post.photo.each do |photo|
+            = link_to image_tag(photo.image.thumb('100x100').url), photo.image.url
+        - else
+          = link_to image_tag('no-image.png')
+        div Дата добавления: #{post.created_at.strftime("%d.%m.%Y %H:%M")}
+        div Цена продажи: #{post.price} руб.
+        div = link_to 'Подробнее', post
+        div = link_to 'Редактировать', edit_post_path(post)
+        div = link_to 'Удалить', post, data: {confirm: 'Вы уверены, что хотите удалиь объявление?'}, method: :delete
+      hr
+  - else
+    p Вы пока не публиковали объявления
+= link_to 'Новое объявление', new_post_path

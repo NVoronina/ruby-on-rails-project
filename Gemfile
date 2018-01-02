@@ -54,6 +54,23 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # MY GEMS
-gem "slim-rails"
+gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'rails-asset-jqueryui'
+gem 'font-awesome-rails'
+gem 'kaminari'
+gem "cancan"
+gem 'html2slim'
+gem 'dragonfly', '~> 1.0', '>= 1.0.12'
+# Use postgresql as the database for Active Record
+gem 'pg', '~> 0.18'
+gem 'activerecord-reset-pk-sequence'
+# Use ActiveModel has_secure_password
+gem 'bcrypt'
+gem 'active_model_serializers'
+
+
+

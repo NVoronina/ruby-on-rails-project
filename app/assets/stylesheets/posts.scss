@@ -1,3 +1,40 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.form-images{
+  width:60%;
+  float:left;
+  margin: 3rem 20% 1rem 20%;
+  background:rgba(255,255,255,0.7);
+
+}
+div.form-text{
+  width:60%;
+  float:left;
+  margin: 1rem 20% 1rem 20%;
+
+
+}
+ul.list-posts{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+ul.list-posts>li{
+  display:block;
+  background:rgba(255, 255, 255, 0.8);
+  padding:1em;
+}
+ul.list-posts>li div{
+  margin:.5em;
+  padding:.5em;
+}
+.title{
+  font-weight:600;
+}
+.t-size{
+
+}
+.new_post{
+  background:rgba(255,255,255,0.7);
+}

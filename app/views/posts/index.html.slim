@@ -1,25 +1,19 @@
-h1 Listing posts
+h1 Список объявлений
 
-table
-  thead
-    tr
-      th Title
-      th Content
-      th User
-      th
-      th
-      th
-
-  tbody
-    - @posts.each do |post|
-      tr
-        td = post.title
-        td = post.content
-        td = post.user_id
-        td = link_to 'Show', post
-        td = link_to 'Edit', edit_post_path(post)
-        td = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Post', new_post_path
+ul.list-posts
+  - @posts.each do |post|
+    li
+      div.title
+        h3 = post.title
+      div.content = post.content
+      div.images-mini
+      - if post.photo[0]
+        - post.photo.each do |photo|
+          = link_to image_tag(photo.image.thumb('100x100').url), photo.image.url
+      - else
+        = link_to image_tag('no-image.png')
+      div Дата добавления: #{post.created_at.strftime("%d.%m.%Y %H:%M")}
+      div Цена продажи: #{post.price} руб.
+      div = link_to 'Подробнее', post
+    hr
+= link_to 'Новое объявление', new_post_path

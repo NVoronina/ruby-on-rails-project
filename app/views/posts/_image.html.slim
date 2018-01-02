@@ -1,0 +1,13 @@
+= form_for @photo do |f|
+  - if @photo.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@photo.errors.count, "error")} prohibited this post from being saved:"
+      ul
+        - @photo.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :image, 'Выбирите все нужные фотографии'
+    = f.file_field :image
+  .actions
+    button.form_button_submit Загрузить

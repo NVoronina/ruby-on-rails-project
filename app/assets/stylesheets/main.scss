@@ -1,0 +1,203 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$main-color: #331e1f;
+$gray-color:#414040;
+//mixins
+@mixin button_mixin{
+  border:none;
+  padding:1em;
+  margin:1em;
+}
+@mixin main_form_mixin{
+  text-align:center;
+  position:absolute;
+  top:10%;
+  left:40%;
+  right:40%;
+  min-width:20%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+@mixin colors_mixin{
+  background: $main-color;
+  color:white;
+}
+/*main styles*/
+body,
+html {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: Arial, Geneva, Helvetica, sans-serif;
+  min-height:100%;
+}
+body{
+  background: image-url(keppel-2039122_1280);
+  background-size: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin:0;
+  padding: 1em;
+  text-transform: uppercase;
+  color: $gray-color;
+}
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+}
+h2 {
+  font-size: 1.4em;
+  text-align: center;
+}
+h3 {
+  font-size: 1.3em;
+}
+h4 {
+  font-size: 1.2em;
+  text-align: center;
+}
+a:hover{
+  background-color:transparent !important;
+}
+form{
+  text-align:center;
+}
+label{
+  margin-left: 1em;
+  color:dimgray;
+  float: left;
+}
+.field>input{
+  border-radius: 0;
+  border:solid 1px lightgrey;
+  margin: 1em;
+  padding:1em;
+  width:82%;
+}
+.form_button_submit{
+  @include button_mixin;
+  @include colors_mixin;
+}
+.form_button_reset{
+  @include button_mixin
+}
+.form_button_reset>a{
+  text-decoration:none;
+  color:dimgray;
+}
+input[type="checkbox"]{
+  width: 2em;
+  margin:0;
+}
+/* Auth page*/
+
+.auth>h1{
+  @include colors_mixin;
+  background:rgba(255,255,255,0.7);
+
+}
+/*header*/
+.header{
+  background:$main-color;
+  opacity: 0.7;
+}
+.menu>ul{
+  list-style: none;
+  margin:0;
+}
+.menu>ul>li{
+  display:inline-block;
+  padding:1em;
+}
+.menu>ul>li:hover{
+  background:rgba(255,255,255, 0.5);
+}
+.menu>ul>li>a{
+  background:transparent;
+  text-decoration: none;
+  color:white;
+}
+.menu_greeting{
+  color:dimgray;
+  text-align:right;
+  margin-right:10em;
+  position:absolute;
+  font-size:.8em;
+  right:0;
+  top:0;
+}
+.button_common{
+  border:none;
+  padding:1em;
+  margin:.2em;
+}
+.button_common>a{
+  text-decoration:none;
+  color:dimgray;
+}
+
+.logo{
+  font-size: 2em;
+  text-transform:uppercase;
+  float:left;
+  display:block;
+  margin:.7rem 1rem .7em 10%;
+}
+.logo>a{
+  text-decoration:none;
+  color: #fff;
+}
+.user-block{
+  position:absolute;
+  right:10%;
+  top:0;
+  color:#fff;
+}
+#post_content{
+  width:28em;
+  height:10em;
+}
+/*footer*/
+.footer{
+  @include colors_mixin;
+  padding:.3em 0;
+  position:fixed;
+  opacity:0.7;
+  width:100%;
+  font-size: 0.8em;
+  text-align: right;
+  bottom:0;
+}
+.footer>p {
+  margin-right: 10%;
+}
+.main{
+  margin:1em 12em 10em 12em;
+}
+.main_form{
+  @include main_form_mixin;
+  background:rgba(255,255,255,0.7);
+  margin-bottom:5em;
+}
+
+// posts on main
+.post{
+  background:rgba(255,255,255,0.7);
+  padding:1em;
+  margin:0.5em;
+  width:30%;
+  display: inline-block;
+}
+.content{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 108px
+}
+.info{
+  background:rgba(255,255,255,0.7);
+  padding:1em;
+
+}

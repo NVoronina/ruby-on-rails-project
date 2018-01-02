@@ -1,0 +1,20 @@
+div.main_form
+  h2
+    | Авторизация
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field
+      = f.label :email, 'Электронная почта'
+      br
+      = f.email_field :email, autofocus: true
+    .field
+      = f.label :password, 'Пароль'
+      br
+      = f.password_field :password, autocomplete: "off"
+    - if devise_mapping.rememberable?
+      .field
+        = f.label :remember_me, 'Запомнить меня'
+        = f.check_box :remember_me
+    .actions
+      button.form_button_submit Войти
+      button.form_button_reset = link_to 'Отмена', root_path
+  = render "devise/shared/links"

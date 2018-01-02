@@ -1,18 +1,24 @@
-= form_for @post do |f|
-  - if @post.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
-      ul
-        - @post.errors.full_messages.each do |message|
-          li = message
+div.form-text
+  = form_for @post do |f|
+    - if @post.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+        ul
+          - @post.errors.full_messages.each do |message|
+            li = message
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :content
-    = f.text_area :content
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
-  .actions = f.submit
+    .field
+      = f.label :title, 'Заголовок'
+      = f.text_field :title
+    .field
+      = f.label :content, 'Описание'
+      = f.text_area :content
+    .field
+      = f.label :address, 'Адрес'
+      = f.text_field :address
+    .field
+      = f.label :price, 'Цена'
+      = f.text_field :price
+    .actions
+      button.form_button_submit Сохранить
+      button.form_button_reset = link_to 'Отмена', '/posts'
